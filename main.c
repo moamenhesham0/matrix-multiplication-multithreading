@@ -410,7 +410,7 @@ void run_test(Matrix* output_matrix , Matrix* matrix1 , Matrix* matrix2 , const 
 int main(int argc , char* argv[])
 {
     static char* files_prefixes[] = {"a" , "b", "c"};
-    static const char* MultiplicationMethods[] = {"per matrix", "per row", "per element"};
+    static const char* multiplication_methods[] = {"per matrix", "per row", "per element"};
 
     /*Sets the files prefixes with the passed arguments*/
     for(int i = 1; i < argc; i++)
@@ -439,15 +439,15 @@ int main(int argc , char* argv[])
 
 
     /*Single Thread Matrix multiplication*/
-    run_test(output_matrix_thread_per_matrix , matrix1 , matrix2 , MultiplicationMethods[THREAD_PER_MATRIX] , THREAD_PER_MATRIX);
+    run_test(output_matrix_thread_per_matrix , matrix1 , matrix2 , multiplication_methods[THREAD_PER_MATRIX] , THREAD_PER_MATRIX);
     /*--------------------------------------------------------------------------------------*/
 
     /*Thread per row Matrix multiplication*/
-    run_test(output_matrix_thread_per_row , matrix1 , matrix2 , MultiplicationMethods[THREAD_PER_ROW] , THREAD_PER_ROW);
+    run_test(output_matrix_thread_per_row , matrix1 , matrix2 , multiplication_methods[THREAD_PER_ROW] , THREAD_PER_ROW);
     /*--------------------------------------------------------------------------------------*/
 
     /*Thread per element Matrix multiplication*/
-    run_test(output_matrix_thread_per_element , matrix1 , matrix2 , MultiplicationMethods[THREAD_PER_ELEMENT] , THREAD_PER_ELEMENT);
+    run_test(output_matrix_thread_per_element , matrix1 , matrix2 , multiplication_methods[THREAD_PER_ELEMENT] , THREAD_PER_ELEMENT);
     /*--------------------------------------------------------------------------------------*/
 
     /* Set output files names*/
